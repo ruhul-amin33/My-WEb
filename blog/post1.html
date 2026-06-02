@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ohm's Law থেকে Smart Grid - বিদ্যুতের বিবর্তন | Ruhul Amin Blog" />
+  <title>Ohm's Law থেকে Smart Grid | Ruhul Amin</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-hero {
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-hero);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+    }
+    .post-category-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--tag-bg);
+      padding: 6px 16px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,102,255,0.2);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .post-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+    .post-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .post-meta-row span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .post-author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .post-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+      align-items: start;
+      padding: 80px 0;
+    }
+    .post-content {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .post-content h2 {
+      font-size: 1.6rem;
+      margin: 48px 0 16px;
+      color: var(--text-primary);
+    }
+    .post-content h3 {
+      font-size: 1.25rem;
+      margin: 36px 0 12px;
+      color: var(--text-primary);
+    }
+    .post-content p { margin-bottom: 20px; }
+    .post-content ul, .post-content ol {
+      padding-left: 28px;
+      margin-bottom: 20px;
+    }
+    .post-content li { margin-bottom: 8px; }
+    .post-content blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 16px 24px;
+      background: var(--tag-bg);
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+    .post-content code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      background: var(--skill-bg);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+    .post-content pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      overflow-x: auto;
+      margin: 28px 0;
+    }
+    .post-content pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .post-image {
+      width: 100%;
+      height: 300px;
+      background: var(--gradient-hero);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      margin: 32px 0;
+      border: 1px solid var(--border);
+    }
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 40px 0;
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .post-tags h4 {
+      width: 100%;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .post-share {
+      margin: 40px 0;
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .post-share h4 {
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .share-btn {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .share-fb { background: #1877f2; color: white; }
+    .share-tw { background: #000; color: white; }
+    .share-li { background: #0a66c2; color: white; }
+    .share-btn:hover { transform: translateY(-2px); opacity: 0.9; color: white; }
+    /* Sidebar */
+    .post-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    .sidebar-card {
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .sidebar-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .sidebar-author-name { font-weight: 700; }
+    .sidebar-author-bio { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .toc-list a:hover { color: var(--accent); }
+    .recent-posts-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .recent-posts-item:last-child { border-bottom: none; }
+    .recent-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .recent-item-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .recent-item-title:hover { color: var(--accent); }
+    .recent-item-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .post-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .post-nav-item {
+      padding: 20px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .post-nav-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .post-nav-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .post-nav-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    @media (max-width: 1024px) {
+      .post-layout { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-container">
+    <a href="../index.html#hero" class="nav-logo">RA<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#hero">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="navMobile" class="nav-mobile">
+    <a href="../index.html#hero">🏠 Home</a>
+    <a href="../index.html#blog">📝 Blog</a>
+    <a href="../index.html#contact">📬 Contact</a>
+  </div>
+</nav>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <div class="container" style="position: relative; z-index: 1;">
+    <span class="post-category-tag">⚡ EEE / Electronics</span>
+    <h1 class="post-title">Ohm's Law থেকে Smart Grid: বিদ্যুতের বিবর্তন</h1>
+    <div class="post-meta-row">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="post-author-avatar">👨‍💻</div>
+        <div>
+          <div style="font-weight:700; color: var(--text-primary);">Ruhul Amin</div>
+          <div style="font-size:0.8rem; color: var(--text-muted);">EEE Student & Author</div>
+        </div>
+      </div>
+      <span><i class="fa-regular fa-calendar"></i> ১৫ জানুয়ারি, ২০২৫</span>
+      <span><i class="fa-regular fa-clock"></i> ৮ min read</span>
+      <span><i class="fa-regular fa-eye"></i> ১,২৩৪ views</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="post-layout">
+
+    <!-- Article Content -->
+    <article class="post-content">
+
+      <div class="post-image" aria-hidden="true">⚡</div>
+
+      <p>
+        ১৮২৭ সালে Georg Simon Ohm একটি সাধারণ সূত্র আবিষ্কার করেছিলেন: <code>V = IR</code>। সেই সময় কেউ ভাবতেও পারেনি যে এই একটি সূত্র পুরো মানব সভ্যতাকে বদলে দেবে। Voltage, Current এবং Resistance-এর এই সম্পর্কই হলো আধুনিক বৈদ্যুতিক প্রকৌশলের ভিত্তি।
+      </p>
+
+      <h2>শুরুটা কীভাবে হয়েছিল</h2>
+
+      <p>
+        ১৮শ শতকের শেষ দিকে Alessandro Volta ব্যাটারি আবিষ্কার করলেন। তারপর Faraday দেখালেন যে চুম্বক দিয়ে বিদ্যুৎ তৈরি করা যায়। এই আবিষ্কারগুলোই আজকের power plant এর ভিত্তি।
+      </p>
+
+      <blockquote>
+        "বিদ্যুৎ হলো আধুনিক সভ্যতার মেরুদণ্ড। এটি ছাড়া আমাদের শিল্প, স্বাস্থ্যসেবা, এবং যোগাযোগ ব্যবস্থা — কোনোটাই কল্পনা করা যায় না।"
+      </blockquote>
+
+      <h2>Ohm's Law: সহজ কিন্তু শক্তিশালী</h2>
+
+      <p>
+        <code>V = IR</code> সূত্রটি দেখতে সহজ, কিন্তু এর প্রয়োগ অসীম। ধরুন আপনার কাছে একটি ৯V ব্যাটারি আছে এবং আপনি জানতে চান ১০০Ω resistor দিয়ে কত current যাবে:
+      </p>
+
+      <pre><code>I = V / R
+I = 9V / 100Ω
+I = 0.09A = 90mA</code></pre>
+
+      <p>
+        এই সহজ calculation দিয়েই আপনি জানতে পারলেন কতটুকু current প্রবাহিত হবে। এই নীতিই সমস্ত electronic circuit design এর মূল ভিত্তি।
+      </p>
+
+      <h2>AC থেকে DC, DC থেকে স্মার্ট গ্রিড</h2>
+
+      <p>
+        Edison এবং Tesla এর বিখ্যাত "War of Currents" এর পরে AC power জিতে গেল। কারণ AC power দূরে পাঠানো সহজ এবং voltage transform করা যায়। আজকের পুরো জাতীয় গ্রিড এই AC power এর উপর ভিত্তি করে চলছে।
+      </p>
+
+      <h3>Smart Grid কী?</h3>
+
+      <p>
+        Traditional power grid একমুখী — power plant থেকে বাড়িতে বিদ্যুৎ আসে। কিন্তু Smart Grid দ্বিমুখী। আপনার বাড়ির solar panel যদি বেশি বিদ্যুৎ তৈরি করে, সেটা grid-এ পাঠিয়ে দিতে পারবেন।
+      </p>
+
+      <ul>
+        <li>Real-time monitoring এবং control</li>
+        <li>Renewable energy integration</li>
+        <li>Automatic fault detection</li>
+        <li>Demand response management</li>
+        <li>Energy storage optimization</li>
+      </ul>
+
+      <h2>Bangladesh এর প্রেক্ষাপটে</h2>
+
+      <p>
+        বাংলাদেশ এখন দ্রুত গতিতে বিদ্যুৎ খাতে উন্নতি করছে। ২০০৯ সালে মাত্র ৪৭% মানুষের বিদ্যুৎ সুবিধা ছিল, আজকে তা প্রায় ১০০%। এটি একটি অসাধারণ অর্জন।
+      </p>
+
+      <p>
+        EEE engineer হিসেবে আমাদের লক্ষ্য হওয়া উচিত এই grid-কে আরও smart এবং efficient করা। Solar power, wind energy এবং energy storage — এগুলো নিয়ে কাজ করার অপার সুযোগ আছে।
+      </p>
+
+      <h2>উপসংহার</h2>
+
+      <p>
+        Ohm's সেই <code>V = IR</code> থেকে আজকের AI-powered smart grid — এটি একটি অসাধারণ যাত্রা। একজন EEE student হিসেবে এই যাত্রার অংশ হওয়া সত্যিই গর্বের। আগামীর বিদ্যুৎ ব্যবস্থা হবে clean, smart এবং efficient — এবং সেটা তৈরি করার দায়িত্ব আমাদের মতো তরুণ প্রকৌশলীদের।
+      </p>
+
+      <!-- Tags -->
+      <div class="post-tags">
+        <h4>Tags:</h4>
+        <span class="tag">#EEE</span>
+        <span class="tag">#OhmsLaw</span>
+        <span class="tag">#SmartGrid</span>
+        <span class="tag">#Electronics</span>
+        <span class="tag">#Engineering</span>
+        <span class="tag">#Bangladesh</span>
+      </div>
+
+      <!-- Share -->
+      <div class="post-share">
+        <h4>এই পোস্টটি শেয়ার করুন</h4>
+        <div class="share-buttons">
+          <a href="#" class="share-btn share-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i> Twitter</a>
+          <a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Post Navigation -->
+      <div class="post-nav">
+        <a href="#" class="post-nav-item" style="text-decoration: none;">
+          <div class="post-nav-label">← Previous</div>
+          <div class="post-nav-title">Arduino দিয়ে প্রথম প্রজেক্ট</div>
+        </a>
+        <a href="#" class="post-nav-item" style="text-align: right; text-decoration: none;">
+          <div class="post-nav-label">Next →</div>
+          <div class="post-nav-title">CSS Glassmorphism Design</div>
+        </a>
+      </div>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="post-sidebar">
+
+      <!-- Author Card -->
+      <div class="glass-card sidebar-card">
+        <h4>লেখক সম্পর্কে</h4>
+        <div class="sidebar-author">
+          <div class="post-author-avatar">👨‍💻</div>
+          <div>
+            <div class="sidebar-author-name">Ruhul Amin</div>
+            <div style="font-size: 0.78rem; color: var(--accent);">EEE Student</div>
+          </div>
+        </div>
+        <p class="sidebar-author-bio">
+          EEE student এবং web developer। Technology, circuits এবং coding নিয়ে passionate।
+        </p>
+        <div style="display: flex; gap: 8px; margin-top: 16px;">
+          <a href="https://github.com/ruhulamin" class="social-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/ruhulamin" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="glass-card sidebar-card">
+        <h4>Table of Contents</h4>
+        <ul class="toc-list" role="list">
+          <li><a href="#">→ শুরুটা কীভাবে হয়েছিল</a></li>
+          <li><a href="#">→ Ohm's Law: সহজ কিন্তু শক্তিশালী</a></li>
+          <li><a href="#">→ AC থেকে DC, DC থেকে Smart Grid</a></li>
+          <li><a href="#">→ Bangladesh এর প্রেক্ষাপট</a></li>
+          <li><a href="#">→ উপসংহার</a></li>
+        </ul>
+      </div>
+
+      <!-- Recent Posts -->
+      <div class="glass-card sidebar-card">
+        <h4>সাম্প্রতিক পোস্ট</h4>
+        <div class="recent-posts-item">
+          <span class="recent-icon">⚙️</span>
+          <div>
+            <a href="post2.html" class="recent-item-title">Arduino দিয়ে প্রথম প্রজেক্ট</a>
+            <div class="recent-item-date">১০ জানুয়ারি, ২০২৫</div>
+          </div>
+        </div>
+        <div class="recent-posts-item">
+          <span class="recent-icon">🌐</span>
+          <div>
+            <a href="post3.html" class="recent-item-title">CSS Glassmorphism ইফেক্ট</a>
+            <div class="recent-item-date">৫ জানুয়ারি, ২০২৫</div>
+          </div>
+        </div>
+        <div class="recent-posts-item">
+          <span class="recent-icon">💻</span>
+          <div>
+            <a href="post4.html" class="recent-item-title">C Programming এ Pointer</a>
+            <div class="recent-item-date">২৮ ডিসেম্বর, ২০২৪</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo" style="margin-top: 0;">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> <strong>Ruhul Amin</strong>. Made with ❤️ in Bangladesh 🇧🇩</p>
+      <div class="footer-links">
+        <a href="../index.html">← Back to Portfolio</a>
+        <a href="../index.html#blog">All Posts</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

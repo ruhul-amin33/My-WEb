@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ruhul Amin - Electrical and Electronic Engineering Student & Web Developer. Portfolio showcasing projects, skills, and blog." />
+  <meta name="keywords" content="Ruhul Amin, EEE, portfolio, web developer, electrical engineering, Bangladesh" />
+  <meta name="author" content="Ruhul Amin" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ruhul Amin | EEE Student & Web Developer" />
+  <meta property="og:description" content="Portfolio of Ruhul Amin — EEE student, web developer, and tech enthusiast from Bangladesh." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ruhulamin.dev" />
+
+  <title>Ruhul Amin | EEE Student & Web Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ==================== PAGE LOADER ==================== -->
+<div id="pageLoader" class="page-loader" aria-hidden="true">
+  <div class="loader-content">
+    <div class="loader-logo">RA.</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-container">
+
+    <a href="#hero" class="nav-logo" aria-label="Ruhul Amin Home">
+      RA<span>.</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links" role="list">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#qualifications">Qualifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="navMobile" class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <a href="#hero">🏠 Home</a>
+    <a href="#about">👤 About</a>
+    <a href="#qualifications">🎓 Qualifications</a>
+    <a href="#skills">⚡ Skills</a>
+    <a href="#projects">💼 Projects</a>
+    <a href="#blog">📝 Blog</a>
+    <a href="#resume">📄 Resume</a>
+    <a href="#contact">📬 Contact</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="hero" aria-label="Hero section">
+  <!-- Background elements -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- Text Column -->
+      <div class="hero-text">
+        <div class="hero-badge" aria-label="Status">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Available for Internship & Freelance
+        </div>
+
+        <h1 class="hero-name">
+          Hi, I'm<br />
+          <span class="gradient-text">Ruhul Amin</span>
+        </h1>
+
+        <p class="hero-title">
+          <span class="highlight" id="typedText" aria-label="Dynamic title"></span>
+          <span style="color: var(--accent)">|</span>
+        </p>
+
+        <p class="hero-description">
+          একজন passionate Electrical and Electronic Engineering ছাত্র, যে circuits এবং code দুটোতেই সমান আগ্রহী। আমি complex engineering problems solve করি এবং modern web technologies দিয়ে সুন্দর digital experiences তৈরি করি।
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+            View Projects
+          </a>
+          <a href="assets/Ruhul_Amin_CV.pdf" class="btn btn-outline" download aria-label="Download CV">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats" role="list" aria-label="Statistics">
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+            <div class="stat-label">Projects Done</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" data-count="8" data-suffix="+">0+</div>
+            <div class="stat-label">Skills Mastered</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-number" data-count="3" data-suffix="+">0+</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <div class="hero-image-bg" aria-hidden="true"></div>
+          <div class="hero-image-ring" aria-hidden="true"></div>
+          <div class="hero-image-circle">
+            <!-- প্রোফাইল ছবি এখানে দিন: <img src="images/profile.jpg" alt="Ruhul Amin" /> -->
+            <div class="hero-image-placeholder">
+              <span class="placeholder-icon" aria-hidden="true">👨‍💻</span>
+              <p>আপনার ছবি এখানে<br/>দিন</p>
+            </div>
+          </div>
+
+          <!-- Floating Tech Badges -->
+          <div class="tech-badge" aria-hidden="true">
+            <span>⚡</span> EEE Student
+          </div>
+          <div class="tech-badge" aria-hidden="true">
+            <span>🌐</span> Web Dev
+          </div>
+          <div class="tech-badge" aria-hidden="true">
+            <span>🇧🇩</span> Bangladesh
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll Down</span>
+  </div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section id="about" class="section-padding" aria-label="About section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">আমার <span>পরিচয়</span></h2>
+      <p class="section-subtitle">একটু জানুন আমার সম্পর্কে, আমার লক্ষ্য এবং আমি কী নিয়ে কাজ করি</p>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Image Column -->
+      <div class="about-image-col animate-on-scroll">
+        <div class="about-image-card">
+          <!-- <img src="images/about.jpg" alt="Ruhul Amin working" /> -->
+          <div class="img-placeholder">
+            <span>🧑‍🔬</span>
+            <p>About Photo<br/>এখানে দিন</p>
+          </div>
+        </div>
+        <div class="about-experience-badge">
+          <div class="years">2+</div>
+          <div class="label">Years of<br>Coding</div>
+        </div>
+      </div>
+
+      <!-- Content Column -->
+      <div class="about-content animate-on-scroll">
+        <span class="section-tag">Who Am I</span>
+        <h2>Passionate about <span>Engineering</span> & Technology</h2>
+
+        <p class="about-intro">
+          আমি রুহুল আমিন, বাংলাদেশের একজন Electrical and Electronic Engineering (EEE) ছাত্র। আমি circuit design, embedded systems এবং web development নিয়ে কাজ করতে ভালোবাসি।
+          <br /><br />
+          প্রযুক্তিকে ব্যবহার করে মানুষের জীবন সহজ করাই আমার মূল লক্ষ্য। Engineering এর technical knowledge এবং programming এর creative problem solving একত্রিত করে আমি unique solutions তৈরি করি।
+        </p>
+
+        <!-- Info Grid -->
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-user" aria-hidden="true"></i> Name</div>
+            <div class="info-value">Ruhul Amin</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</div>
+            <div class="info-value">ruhul@email.com</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location</div>
+            <div class="info-value">Bangladesh 🇧🇩</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Degree</div>
+            <div class="info-value">B.Sc. in EEE</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-calendar" aria-hidden="true"></i> Status</div>
+            <div class="info-value">Currently Studying</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label"><i class="fa-solid fa-language" aria-hidden="true"></i> Languages</div>
+            <div class="info-value">বাংলা, English</div>
+          </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <h3 class="timeline-title"><i class="fa-solid fa-graduation-cap" style="color: var(--accent); margin-right: 8px;"></i>শিক্ষাগত যোগ্যতা</h3>
+        <div class="timeline" role="list" aria-label="Education timeline">
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-date">2022 - Present</div>
+            <div class="timeline-school">University (আপনার বিশ্ববিদ্যালয়ের নাম)</div>
+            <div class="timeline-degree">B.Sc. in Electrical and Electronic Engineering</div>
+            <span class="timeline-result">Currently in 3rd Year</span>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-date">2019 - 2021</div>
+            <div class="timeline-school">আপনার কলেজের নাম</div>
+            <div class="timeline-degree">HSC — Science Group</div>
+            <span class="timeline-result">GPA: 5.00</span>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-date">2017 - 2019</div>
+            <div class="timeline-school">আপনার স্কুলের নাম</div>
+            <div class="timeline-degree">SSC — Science Group</div>
+            <span class="timeline-result">GPA: 5.00</span>
+          </div>
+
+        </div>
+
+        <!-- Interests -->
+        <h3 class="timeline-title" style="margin-top: 32px;">
+          <i class="fa-solid fa-heart" style="color: var(--accent); margin-right: 8px;"></i>আগ্রহ ও শখ
+        </h3>
+        <div class="interests-list" role="list" aria-label="Interests and hobbies">
+          <span class="interest-tag" role="listitem">⚡ Electronics</span>
+          <span class="interest-tag" role="listitem">💻 Web Dev</span>
+          <span class="interest-tag" role="listitem">🤖 IoT Projects</span>
+          <span class="interest-tag" role="listitem">📚 Reading</span>
+          <span class="interest-tag" role="listitem">🎮 Gaming</span>
+          <span class="interest-tag" role="listitem">📷 Photography</span>
+          <span class="interest-tag" role="listitem">✈️ Traveling</span>
+          <span class="interest-tag" role="listitem">🎵 Music</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUALIFICATIONS ==================== -->
+<section id="qualifications" class="section-padding" aria-label="Qualifications section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Qualifications</span>
+      <h2 class="section-title">আমার <span>যোগ্যতা</span></h2>
+      <p class="section-subtitle">Academic achievements, certifications এবং technical training</p>
+    </div>
+
+    <div class="qual-grid">
+
+      <!-- Academic -->
+      <div class="glass-card qual-card animate-on-scroll">
+        <div class="qual-card-icon">🎓</div>
+        <h3>Academic Qualifications</h3>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">B.Sc. in EEE (Ongoing)</div>
+            <div class="qual-item-meta">আপনার বিশ্ববিদ্যালয় • 2022 – Present</div>
+            <span class="qual-item-badge badge-info">In Progress</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">HSC – Science</div>
+            <div class="qual-item-meta">আপনার কলেজ • 2021</div>
+            <span class="qual-item-badge badge-success">GPA 5.00</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">SSC – Science</div>
+            <div class="qual-item-meta">আপনার স্কুল • 2019</div>
+            <span class="qual-item-badge badge-success">GPA 5.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="glass-card qual-card animate-on-scroll">
+        <div class="qual-card-icon">📜</div>
+        <h3>Certifications</h3>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Web Development Fundamentals</div>
+            <div class="qual-item-meta">freeCodeCamp • 2023</div>
+            <span class="qual-item-badge badge-success">Completed</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Python for Beginners</div>
+            <div class="qual-item-meta">Coursera • 2023</div>
+            <span class="qual-item-badge badge-success">Completed</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Arduino & IoT Basics</div>
+            <div class="qual-item-meta">Udemy • 2023</div>
+            <span class="qual-item-badge badge-success">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Training -->
+      <div class="glass-card qual-card animate-on-scroll">
+        <div class="qual-card-icon">🔧</div>
+        <h3>Technical Training</h3>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">PCB Design with KiCad</div>
+            <div class="qual-item-meta">Self-taught • 3 months</div>
+            <span class="qual-item-badge badge-success">Proficient</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">MATLAB & Simulink</div>
+            <div class="qual-item-meta">University Lab • 2023</div>
+            <span class="qual-item-badge badge-info">Intermediate</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Embedded C / Arduino</div>
+            <div class="qual-item-meta">Self-taught • 6 months</div>
+            <span class="qual-item-badge badge-success">Proficient</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="glass-card qual-card animate-on-scroll">
+        <div class="qual-card-icon">🏆</div>
+        <h3>Achievements</h3>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Dean's List Scholar</div>
+            <div class="qual-item-meta">University • 2023</div>
+            <span class="qual-item-badge badge-success">Awarded</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Project Competition – 2nd Place</div>
+            <div class="qual-item-meta">Dept. Science Fair • 2023</div>
+            <span class="qual-item-badge badge-success">2nd Place</span>
+          </div>
+        </div>
+        <div class="qual-item">
+          <div class="qual-dot"></div>
+          <div>
+            <div class="qual-item-title">Programming Contest Finalist</div>
+            <div class="qual-item-meta">Intra-University • 2022</div>
+            <span class="qual-item-badge badge-info">Finalist</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SKILLS SECTION ==================== -->
+<section id="skills" class="section-padding" aria-label="Skills section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Skills</span>
+      <h2 class="section-title">আমার <span>দক্ষতা</span></h2>
+      <p class="section-subtitle">Programming languages, web technologies এবং engineering tools</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- Web Technologies -->
+      <div class="glass-card skill-category-card animate-on-scroll">
+        <div class="skill-category-title">
+          <div class="skill-category-icon">🌐</div>
+          Web Technologies
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🟠</span> HTML5</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🔵</span> CSS3</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🟡</span> JavaScript</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🟣</span> PHP</span>
+            <span class="skill-percent">65%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="PHP skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🗄️</span> MySQL</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL skill level"></div></div>
+        </div>
+      </div>
+
+      <!-- Programming Languages -->
+      <div class="glass-card skill-category-card animate-on-scroll">
+        <div class="skill-category-title">
+          <div class="skill-category-icon">💻</div>
+          Programming Languages
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>⚙️</span> C Programming</span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="C Programming skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>☕</span> Java</span>
+            <span class="skill-percent">60%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Java skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🐍</span> Python</span>
+            <span class="skill-percent">55%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="Python skill level"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🐙</span> Git & GitHub</span>
+            <span class="skill-percent">72%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Git skill level"></div></div>
+        </div>
+      </div>
+
+      <!-- EEE Skills -->
+      <div class="glass-card skill-category-card animate-on-scroll">
+        <div class="skill-category-title">
+          <div class="skill-category-icon">⚡</div>
+          EEE Technical Skills
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🔌</span> Circuit Design</span>
+            <span class="skill-percent">78%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🤖</span> Arduino / AVR</span>
+            <span class="skill-percent">82%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>📊</span> MATLAB</span>
+            <span class="skill-percent">65%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🖥️</span> PCB Design (KiCad)</span>
+            <span class="skill-percent">60%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name"><span>🔬</span> Proteus Simulation</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS SECTION ==================== -->
+<section id="projects" class="section-padding" aria-label="Projects section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Projects</span>
+      <h2 class="section-title">আমার <span>প্রজেক্ট</span></h2>
+      <p class="section-subtitle">আমার কাজের কিছু নমুনা — engineering থেকে web development পর্যন্ত</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="project-filters" role="tablist" aria-label="Project filters">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+      <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Dev</button>
+      <button class="filter-btn" data-filter="eee" role="tab" aria-selected="false">EEE / Hardware</button>
+      <button class="filter-btn" data-filter="programming" role="tab" aria-selected="false">Programming</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="web">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">🛒</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener" aria-label="View on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener" style="color: white; border-color: white;" aria-label="Live Demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Web Development</div>
+          <h3 class="project-card-title">E-Commerce Website</h3>
+          <p class="project-card-desc">PHP এবং MySQL দিয়ে তৈরি একটি সম্পূর্ণ e-commerce platform। User authentication, product management, cart ও payment system সহ।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fa-solid fa-eye"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="eee">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">🤖</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">EEE / Robotics</div>
+          <h3 class="project-card-title">Line Following Robot</h3>
+          <p class="project-card-desc">Arduino ব্যবহার করে তৈরি একটি autonomous line following robot। IR sensors এবং motor control সহ।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">C/C++</span>
+            <span class="tech-tag">Sensor</span>
+            <span class="tech-tag">Motor</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="web">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">📝</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener" style="color: white; border-color: white;">
+              <i class="fa-solid fa-eye"></i> Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Web Development</div>
+          <h3 class="project-card-title">Student Management System</h3>
+          <p class="project-card-desc">একটি সম্পূর্ণ student management web app। Result tracking, attendance, এবং notice board সহ।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">CSS</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fa-solid fa-eye"></i> Live
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="eee">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">🌡️</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">IoT / EEE</div>
+          <h3 class="project-card-title">Smart Home Temperature Monitor</h3>
+          <p class="project-card-desc">DHT11 sensor এবং ESP8266 WiFi module ব্যবহার করে IoT-based temperature monitoring system।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">ESP8266</span>
+            <span class="tech-tag">IoT</span>
+            <span class="tech-tag">DHT11</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="programming">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">📊</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Programming</div>
+          <h3 class="project-card-title">Grade Calculator (C Program)</h3>
+          <p class="project-card-desc">C programming দিয়ে তৈরি একটি GPA/CGPA calculator। Multiple student এবং subject support সহ।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">Algorithm</span>
+            <span class="tech-tag">CLI</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="glass-card project-card animate-on-scroll" data-category="web">
+        <div class="project-card-image">
+          <div class="project-card-image-placeholder" aria-hidden="true">🌤️</div>
+          <div class="project-overlay">
+            <a href="https://github.com/ruhulamin" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-outline btn-sm" target="_blank" rel="noopener" style="color: white; border-color: white;">
+              <i class="fa-solid fa-eye"></i> Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-category">Web Development</div>
+          <h3 class="project-card-title">Weather App</h3>
+          <p class="project-card-desc">JavaScript এবং OpenWeather API ব্যবহার করে একটি real-time weather application।</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">API</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/ruhulamin" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fa-solid fa-eye"></i> Live
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BLOG SECTION ==================== -->
+<section id="blog" class="section-padding" aria-label="Blog section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Blog</span>
+      <h2 class="section-title">আমার <span>লেখালেখি</span></h2>
+      <p class="section-subtitle">Engineering, programming এবং technology নিয়ে আমার চিন্তাভাবনা</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="blog-search-bar animate-on-scroll">
+      <span class="search-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <input type="search" id="blogSearch" placeholder="ব্লগ পোস্ট খুঁজুন..." aria-label="Search blog posts" />
+    </div>
+
+    <!-- Featured Post -->
+    <div class="blog-featured animate-on-scroll">
+      <div class="featured-label">⭐ Featured Post</div>
+      <div class="featured-card">
+        <div class="featured-card-image" aria-hidden="true">⚡</div>
+        <div class="featured-card-body">
+          <div class="featured-card-category">EEE / Electronics</div>
+          <h2 class="featured-card-title">Ohm's Law থেকে Smart Grid: বিদ্যুতের বিবর্তন</h2>
+          <div class="blog-meta" aria-label="Post metadata">
+            <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> ১৫ জানুয়ারি, ২০২৫</span>
+            <span><i class="fa-regular fa-user" aria-hidden="true"></i> Ruhul Amin</span>
+            <span><i class="fa-regular fa-clock" aria-hidden="true"></i> ৮ min read</span>
+          </div>
+          <p class="featured-card-excerpt">
+            Georg Ohm এর সেই বিখ্যাত সূত্র V=IR থেকে শুরু করে আজকের AI-powered smart grid পর্যন্ত — বিদ্যুৎ প্রযুক্তির এই অসাধারণ যাত্রার গল্প। কীভাবে একটি সহজ সূত্র আমাদের পুরো সভ্যতাকে বদলে দিয়েছে...
+          </p>
+          <a href="blog/post1.html" class="btn btn-primary" aria-label="Read full post">
+            পড়তে থাকুন <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="blog-categories animate-on-scroll" role="tablist" aria-label="Blog categories">
+      <button class="category-btn active" data-cat="all" role="tab">All</button>
+      <button class="category-btn" data-cat="eee" role="tab">EEE</button>
+      <button class="category-btn" data-cat="webdev" role="tab">Web Dev</button>
+      <button class="category-btn" data-cat="programming" role="tab">Programming</button>
+      <button class="category-btn" data-cat="tutorial" role="tab">Tutorial</button>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="eee">
+        <div class="blog-card-image">⚙️</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">EEE</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post2.html">Arduino দিয়ে প্রথম প্রজেক্ট: LED Blink থেকে IoT</a>
+          </h3>
+          <p class="blog-card-excerpt">Arduino শেখার শুরু থেকে আমার প্রথম IoT project তৈরির অভিজ্ঞতা।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ১০ জানুয়ারি, ২০২৫ &nbsp;·&nbsp; ৬ min
+            </span>
+            <a href="blog/post2.html" class="read-more" aria-label="Read Arduino post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="webdev">
+        <div class="blog-card-image">🌐</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Web Dev</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post3.html">CSS Glassmorphism: আধুনিক UI ডিজাইনের নতুন ট্রেন্ড</a>
+          </h3>
+          <p class="blog-card-excerpt">Glassmorphism কী এবং কীভাবে CSS দিয়ে এই ইফেক্ট তৈরি করতে হয়।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ৫ জানুয়ারি, ২০২৫ &nbsp;·&nbsp; ৫ min
+            </span>
+            <a href="blog/post3.html" class="read-more" aria-label="Read CSS post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="programming">
+        <div class="blog-card-image">💻</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Programming</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post4.html">C Programming এ Pointer: ভয় নয়, জয়!</a>
+          </h3>
+          <p class="blog-card-excerpt">Pointer নিয়ে সবার ভয় থাকে। সহজ বাংলায় pointer বুঝলে আর ভয় থাকবে না।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ২৮ ডিসেম্বর, ২০২৪ &nbsp;·&nbsp; ৭ min
+            </span>
+            <a href="blog/post4.html" class="read-more" aria-label="Read C pointer post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="tutorial">
+        <div class="blog-card-image">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Tutorial</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post5.html">GitHub এ প্রথম Project Upload: Step by Step Guide</a>
+          </h3>
+          <p class="blog-card-excerpt">Git এবং GitHub শিখুন শুরু থেকে। প্রথম repository তৈরি থেকে push পর্যন্ত সব।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ২০ ডিসেম্বর, ২০২৪ &nbsp;·&nbsp; ১০ min
+            </span>
+            <a href="blog/post5.html" class="read-more" aria-label="Read GitHub tutorial post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="eee">
+        <div class="blog-card-image">⚡</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">EEE</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post6.html">Transistor কী? BJT এর কাজ সহজ ভাষায়</a>
+          </h3>
+          <p class="blog-card-excerpt">Transistor এর মূল ধারণা, working principle এবং circuit applications নিয়ে বিস্তারিত আলোচনা।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ১৫ ডিসেম্বর, ২০২৪ &nbsp;·&nbsp; ৮ min
+            </span>
+            <a href="blog/post6.html" class="read-more" aria-label="Read transistor post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card blog-card animate-on-scroll" data-category="webdev">
+        <div class="blog-card-image">🚀</div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat">Web Dev</div>
+          <h3 class="blog-card-title">
+            <a href="blog/post7.html">Netlify তে বিনামূল্যে Website Deploy করুন</a>
+          </h3>
+          <p class="blog-card-excerpt">আপনার HTML/CSS website কে বিনামূল্যে live করুন Netlify তে। সহজ step-by-step guide।</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-meta">
+              <i class="fa-regular fa-calendar" aria-hidden="true"></i> ৮ ডিসেম্বর, ২০২৪ &nbsp;·&nbsp; ৪ min
+            </span>
+            <a href="blog/post7.html" class="read-more" aria-label="Read Netlify deployment post">
+              Read <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Tags Cloud -->
+    <div class="blog-tags-section animate-on-scroll">
+      <h3>Popular Tags</h3>
+      <div class="tags-cloud" role="list" aria-label="Blog tags">
+        <span class="tag" role="listitem">#Arduino</span>
+        <span class="tag" role="listitem">#EEE</span>
+        <span class="tag" role="listitem">#WebDevelopment</span>
+        <span class="tag" role="listitem">#JavaScript</span>
+        <span class="tag" role="listitem">#CircuitDesign</span>
+        <span class="tag" role="listitem">#PHP</span>
+        <span class="tag" role="listitem">#IoT</span>
+        <span class="tag" role="listitem">#CSS</span>
+        <span class="tag" role="listitem">#CProgramming</span>
+        <span class="tag" role="listitem">#GitHub</span>
+        <span class="tag" role="listitem">#Bangladesh</span>
+        <span class="tag" role="listitem">#Engineering</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== RESUME SECTION ==================== -->
+<section id="resume" class="section-padding" aria-label="Resume section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Resume</span>
+      <h2 class="section-title">আমার <span>CV / Resume</span></h2>
+      <p class="section-subtitle">আমার সম্পূর্ণ professional profile ডাউনলোড করুন</p>
+    </div>
+
+    <div class="resume-layout">
+
+      <!-- Actions -->
+      <div class="resume-actions animate-on-scroll">
+        <h3>Professional Resume</h3>
+        <p>আমার সম্পূর্ণ academic background, skills, projects এবং certifications সহ CV টি ডাউনলোড করুন।</p>
+
+        <a href="assets/Ruhul_Amin_CV.pdf" class="btn btn-primary" download aria-label="Download CV as PDF">
+          <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+          Download CV (PDF)
+        </a>
+        <a href="assets/Ruhul_Amin_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener" aria-label="View CV online">
+          <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          View Online
+        </a>
+
+        <div style="margin-top: 32px; padding: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Quick Info</div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 2;">
+            📄 Format: PDF<br>
+            📏 Pages: 2<br>
+            🗓️ Last Updated: January 2025<br>
+            🌐 Language: English
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume Preview -->
+      <div class="resume-preview animate-on-scroll">
+        <div class="resume-preview-header">
+          <h2>Ruhul Amin</h2>
+          <p>Electrical and Electronic Engineering Student | Web Developer</p>
+          <p style="margin-top: 8px; opacity: 0.8; font-size: 0.85rem;">
+            📧 ruhul@email.com &nbsp;|&nbsp; 📱 +880 1XXX-XXXXXX &nbsp;|&nbsp; 🌐 ruhulamin.dev
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Education</div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">B.Sc. in Electrical and Electronic Engineering</div>
+            <div class="resume-entry-sub">আপনার বিশ্ববিদ্যালয়ের নাম</div>
+            <div class="resume-entry-period">2022 – Present | CGPA: (চলমান)</div>
+          </div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">HSC – Science Group</div>
+            <div class="resume-entry-sub">আপনার কলেজের নাম</div>
+            <div class="resume-entry-period">2019 – 2021 | GPA: 5.00</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Key Skills</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP/MySQL</span>
+            <span class="tech-tag">C Programming</span>
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">Circuit Design</span>
+            <span class="tech-tag">Git/GitHub</span>
+            <span class="tech-tag">MATLAB</span>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Notable Projects</div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">E-Commerce Website</div>
+            <div class="resume-entry-sub">PHP, MySQL, HTML, CSS, JS</div>
+          </div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">Line Following Robot</div>
+            <div class="resume-entry-sub">Arduino, C/C++, IR Sensors</div>
+          </div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">IoT Temperature Monitor</div>
+            <div class="resume-entry-sub">ESP8266, DHT11, Arduino</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-section-title">Certifications</div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">Web Development — freeCodeCamp (2023)</div>
+          </div>
+          <div class="resume-entry">
+            <div class="resume-entry-title">Python Basics — Coursera (2023)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT SECTION ==================== -->
+<section id="contact" class="section-padding" aria-label="Contact section">
+  <div class="container">
+
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">যোগাযোগ <span>করুন</span></h2>
+      <p class="section-subtitle">Project, collaboration বা যেকোনো বিষয়ে আমার সাথে কথা বলুন</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info animate-on-scroll">
+        <h3>আমার সাথে কথা বলুন</h3>
+        <p>আমি সবসময় নতুন opportunities, interesting projects এবং collaboration এর জন্য প্রস্তুত। নির্দ্বিধায় যোগাযোগ করুন!</p>
+
+        <div class="contact-items" role="list" aria-label="Contact information">
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">ruhulamin@email.com</div>
+            </div>
+          </div>
+
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value">+880 1XXX-XXXXXX</div>
+            </div>
+          </div>
+
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Bangladesh 🇧🇩</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links" role="list" aria-label="Social media links">
+          <a href="https://github.com/ruhulamin" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="GitHub Profile">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/ruhulamin" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://facebook.com/ruhulamin" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook Profile">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://twitter.com/ruhulamin" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Twitter Profile">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://youtube.com/@ruhulamin" class="social-link" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="YouTube Channel">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="glass-card contact-form-card animate-on-scroll">
+        <h3 class="form-title">📬 বার্তা পাঠান</h3>
+        <p class="form-subtitle">সাধারণত ২৪ ঘন্টার মধ্যে reply করি</p>
+
+        <form id="contactForm" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">আপনার নাম *</label>
+              <input type="text" id="contactName" name="name" placeholder="আপনার পুরো নাম" required minlength="2" aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">ইমেইল *</label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required aria-required="true" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject">বিষয়</label>
+            <select id="contactSubject" name="subject" aria-label="Select message subject">
+              <option value="">বিষয় নির্বাচন করুন</option>
+              <option value="project">Project Collaboration</option>
+              <option value="freelance">Freelance Work</option>
+              <option value="internship">Internship Opportunity</option>
+              <option value="question">Technical Question</option>
+              <option value="other">অন্যান্য</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactPhone">Phone (optional)</label>
+            <input type="tel" id="contactPhone" name="phone" placeholder="+880 1XXX-XXXXXX" />
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">আপনার বার্তা *</label>
+            <textarea id="contactMessage" name="message" placeholder="আপনার বার্তা এখানে লিখুন..." required minlength="10" aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit" aria-label="Send message">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            বার্তা পাঠান
+          </button>
+
+          <div id="formSuccess" class="success-message" role="alert" aria-live="polite">
+            ✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে! শীঘ্রই reply করব।
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">RA<span>.</span></a>
+        <p>Electrical and Electronic Engineering Student এবং Web Developer। Technology দিয়ে পৃথিবী বদলানোর স্বপ্ন দেখি।</p>
+        <div class="footer-social" role="list" aria-label="Social media links">
+          <a href="https://github.com/ruhulamin" class="footer-social-link" target="_blank" rel="noopener" role="listitem" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/ruhulamin" class="footer-social-link" target="_blank" rel="noopener" role="listitem" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://facebook.com/ruhulamin" class="footer-social-link" target="_blank" rel="noopener" role="listitem" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/ruhulamin" class="footer-social-link" target="_blank" rel="noopener" role="listitem" aria-label="Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul role="list">
+          <li><a href="#hero">🏠 Home</a></li>
+          <li><a href="#about">👤 About</a></li>
+          <li><a href="#skills">⚡ Skills</a></li>
+          <li><a href="#projects">💼 Projects</a></li>
+          <li><a href="#blog">📝 Blog</a></li>
+          <li><a href="#contact">📬 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Projects -->
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul role="list">
+          <li><a href="#projects">E-Commerce Website</a></li>
+          <li><a href="#projects">Line Following Robot</a></li>
+          <li><a href="#projects">Student Mgmt System</a></li>
+          <li><a href="#projects">IoT Monitor</a></li>
+          <li><a href="#projects">Weather App</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.6;">নতুন blog post এবং project update পেতে subscribe করুন।</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="আপনার ইমেইল" aria-label="Newsletter email subscription" />
+          <button class="btn btn-primary btn-sm">Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; <span id="footerYear"></span> <strong>Ruhul Amin</strong>. Made with ❤️ in Bangladesh 🇧🇩
+        | <a href="#hero">Privacy Policy</a>
+      </p>
+      <div class="footer-links" role="list" aria-label="Footer links">
+        <a href="#" role="listitem">Terms</a>
+        <a href="#" role="listitem">Privacy</a>
+        <a href="sitemap.xml" role="listitem">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+<!-- Toast Notification Container -->
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+<!-- Main JavaScript -->
+<script src="js/main.js"></script>
+
+<!-- Footer Year -->
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

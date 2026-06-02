@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arduino দিয়ে প্রথম প্রজেক্ট: LED Blink থেকে IoT | Ruhul Amin Blog" />
+  <title>Arduino দিয়ে প্রথম প্রজেক্ট | Ruhul Amin</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-hero { min-height: 50vh; display: flex; align-items: center; background: var(--gradient-hero); padding: 140px 0 80px; position: relative; overflow: hidden; }
+    .post-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.4; }
+    .post-category-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--accent); background: var(--tag-bg); padding: 6px 16px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; border: 1px solid rgba(0,102,255,0.2); font-family: 'JetBrains Mono', monospace; }
+    .post-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px; max-width: 800px; }
+    .post-meta-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-muted); }
+    .post-meta-row span { display: flex; align-items: center; gap: 6px; }
+    .post-author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-accent); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; flex-shrink: 0; }
+    .post-layout { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; padding: 80px 0; }
+    .post-content { font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary); }
+    .post-content h2 { font-size: 1.6rem; margin: 48px 0 16px; color: var(--text-primary); }
+    .post-content h3 { font-size: 1.25rem; margin: 36px 0 12px; color: var(--text-primary); }
+    .post-content p { margin-bottom: 20px; }
+    .post-content ul, .post-content ol { padding-left: 28px; margin-bottom: 20px; }
+    .post-content li { margin-bottom: 8px; }
+    .post-content blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; background: var(--tag-bg); border-radius: 0 12px 12px 0; margin: 28px 0; font-style: italic; color: var(--text-primary); }
+    .post-content code { font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; background: var(--skill-bg); color: var(--accent); padding: 2px 8px; border-radius: 5px; }
+    .post-content pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 24px; overflow-x: auto; margin: 28px 0; }
+    .post-content pre code { background: none; padding: 0; font-size: 0.9rem; color: var(--text-secondary); }
+    .post-image { width: 100%; height: 280px; background: var(--gradient-hero); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 6rem; margin: 32px 0; border: 1px solid var(--border); }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0; padding: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; }
+    .post-tags h4 { width: 100%; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+    .post-share { margin: 40px 0; padding: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; text-align: center; }
+    .post-share h4 { margin-bottom: 16px; }
+    .share-buttons { display: flex; gap: 10px; justify-content: center; }
+    .share-btn { padding: 10px 20px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .share-fb { background: #1877f2; color: white; } .share-tw { background: #000; color: white; } .share-li { background: #0a66c2; color: white; }
+    .share-btn:hover { transform: translateY(-2px); opacity: 0.9; color: white; }
+    .post-sidebar { position: sticky; top: 100px; }
+    .sidebar-card { padding: 28px; margin-bottom: 24px; }
+    .sidebar-card h4 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { font-size: 0.88rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--accent); }
+    .info-box { background: var(--tag-bg); border: 1px solid rgba(0,102,255,0.2); border-radius: 12px; padding: 20px; margin: 24px 0; }
+    .info-box-title { font-weight: 700; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 1024px) { .post-layout { grid-template-columns: 1fr; } .post-sidebar { position: static; } }
+  </style>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="container nav-container">
+    <a href="../index.html" class="nav-logo">RA<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#hero">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="navMobile" class="nav-mobile">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../index.html#blog">📝 Blog</a>
+    <a href="../index.html#contact">📬 Contact</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="container" style="position: relative; z-index: 1;">
+    <span class="post-category-tag">⚙️ EEE / Arduino</span>
+    <h1 class="post-title">Arduino দিয়ে প্রথম প্রজেক্ট: LED Blink থেকে IoT পর্যন্ত</h1>
+    <div class="post-meta-row">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="post-author-avatar">👨‍💻</div>
+        <div><div style="font-weight:700; color: var(--text-primary);">Ruhul Amin</div><div style="font-size:0.8rem; color: var(--text-muted);">EEE Student</div></div>
+      </div>
+      <span><i class="fa-regular fa-calendar"></i> ১০ জানুয়ারি, ২০২৫</span>
+      <span><i class="fa-regular fa-clock"></i> ৬ min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="post-layout">
+    <article class="post-content">
+      <div class="post-image" aria-hidden="true">⚙️</div>
+
+      <p>Arduino শেখার শুরুটা সবার জন্যই একটু ভয়ের মনে হয়। কিন্তু সত্যি বলতে, এটা এতটাই সহজ যে একবার শুরু করলে আর থামা যায় না! আমার Arduino যাত্রা শুরু হয়েছিল একটা ছোট্ট LED জ্বালানো থেকে, আর এখন আমি পুরো IoT সিস্টেম বানাচ্ছি।</p>
+
+      <h2>Arduino কী এবং কেন শিখবেন?</h2>
+      <p>Arduino হলো একটি open-source electronics platform যেখানে hardware আর software একসাথে কাজ করে। এটা শিখলে আপনি real world এর physical objects কে control করতে পারবেন — যেমন motor চালানো, sensor থেকে data পড়া, বা internet এর সাথে সংযুক্ত করা।</p>
+
+      <div class="info-box">
+        <div class="info-box-title">💡 কেন Arduino শিখবেন?</div>
+        <ul style="margin: 0; padding-left: 20px; color: var(--text-secondary); font-size: 0.9rem;">
+          <li>EEE students দের জন্য perfect starting point</li>
+          <li>Relatively সস্তা এবং সহজলভ্য</li>
+          <li>বিশাল community এবং tutorial আছে</li>
+          <li>Job market এ IoT skill এর চাহিদা বাড়ছে</li>
+        </ul>
+      </div>
+
+      <h2>প্রথম প্রজেক্ট: LED Blink</h2>
+      <p>সবচেয়ে বিখ্যাত Arduino প্রজেক্ট হলো LED blink। মাত্র কয়েক লাইন কোড দিয়ে আপনি একটা LED জ্বালাতে এবং নেভাতে পারবেন:</p>
+
+      <pre><code>// LED Blink - প্রথম Arduino প্রজেক্ট
+void setup() {
+  pinMode(13, OUTPUT);  // Pin 13 কে output হিসেবে সেট করুন
+}
+
+void loop() {
+  digitalWrite(13, HIGH);  // LED জ্বালান
+  delay(1000);              // ১ সেকেন্ড অপেক্ষা করুন
+  digitalWrite(13, LOW);   // LED নেভান
+  delay(1000);              // আবার ১ সেকেন্ড
+}</code></pre>
+
+      <p>মাত্র ৮ লাইন কোড! কিন্তু এই ছোট্ট কোডটিই আপনাকে শেখাবে কীভাবে Arduino এ pin control করতে হয়।</p>
+
+      <h2>পরবর্তী ধাপ: Sensor ব্যবহার</h2>
+      <p>LED blink শেখার পর আমি DHT11 temperature sensor ব্যবহার করতে শিখলাম। এই sensor দিয়ে তাপমাত্রা এবং আর্দ্রতা মাপা যায়:</p>
+
+      <pre><code>#include &lt;DHT.h&gt;
+
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float temp = dht.readTemperature();
+  float humid = dht.readHumidity();
+  
+  Serial.print("Temperature: ");
+  Serial.print(temp);
+  Serial.println("°C");
+  
+  Serial.print("Humidity: ");
+  Serial.print(humid);
+  Serial.println("%");
+  
+  delay(2000);
+}</code></pre>
+
+      <h2>IoT পর্যন্ত যাত্রা</h2>
+      <p>Arduino এর সাথে ESP8266 WiFi module যোগ করলে আপনি internet connected devices বানাতে পারবেন। আমার সবচেয়ে ভালো প্রজেক্ট ছিল একটা smart temperature monitor যেটা data cloud এ পাঠাত এবং phone এ notification আসত।</p>
+
+      <h3>প্রয়োজনীয় উপকরণ</h3>
+      <ul>
+        <li>Arduino Uno বোর্ড (~৫০০-৮০০ টাকা)</li>
+        <li>Breadboard এবং jumper wires</li>
+        <li>LED, resistor (220Ω)</li>
+        <li>DHT11 sensor (optional)</li>
+        <li>ESP8266 module (IoT এর জন্য)</li>
+      </ul>
+
+      <blockquote>"Hardware programming কঠিন মনে হলেও, Arduino দিয়ে শুরু করলে অনেক সহজ হয়ে যায়। প্রতিটি ছোট সাফল্যই আপনাকে এগিয়ে নিয়ে যাবে।"</blockquote>
+
+      <h2>উপসংহার</h2>
+      <p>Arduino শেখা EEE students দের জন্য অত্যন্ত গুরুত্বপূর্ণ। এটা theory কে practice এ রূপ দেওয়ার সবচেয়ে সহজ উপায়। আজই শুরু করুন — প্রথম LED blink হলেই আপনি বুঝতে পারবেন কেন এটা এত মজার!</p>
+
+      <div class="post-tags">
+        <h4>Tags:</h4>
+        <span class="tag">#Arduino</span>
+        <span class="tag">#IoT</span>
+        <span class="tag">#EEE</span>
+        <span class="tag">#Electronics</span>
+        <span class="tag">#Embedded</span>
+      </div>
+
+      <div class="post-share">
+        <h4>এই পোস্টটি শেয়ার করুন</h4>
+        <div class="share-buttons">
+          <a href="#" class="share-btn share-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i> Twitter</a>
+          <a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+    </article>
+
+    <aside class="post-sidebar">
+      <div class="glass-card sidebar-card">
+        <h4>Table of Contents</h4>
+        <ul class="toc-list">
+          <li><a href="#">→ Arduino কী এবং কেন শিখবেন</a></li>
+          <li><a href="#">→ প্রথম প্রজেক্ট: LED Blink</a></li>
+          <li><a href="#">→ Sensor ব্যবহার</a></li>
+          <li><a href="#">→ IoT পর্যন্ত যাত্রা</a></li>
+          <li><a href="#">→ উপসংহার</a></li>
+        </ul>
+      </div>
+      <div class="glass-card sidebar-card">
+        <h4>Related Posts</h4>
+        <div style="display:flex; flex-direction: column; gap: 12px;">
+          <a href="post1.html" style="font-size:0.88rem; color: var(--text-secondary); text-decoration:none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">⚡ Ohm's Law থেকে Smart Grid</a>
+          <a href="post6.html" style="font-size:0.88rem; color: var(--text-secondary); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">🔌 Transistor কী? BJT এর কাজ</a>
+          <a href="post5.html" style="font-size:0.88rem; color: var(--text-secondary); text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">📖 GitHub Tutorial</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> <strong>Ruhul Amin</strong>. Made with ❤️ in Bangladesh 🇧🇩</p>
+      <div class="footer-links"><a href="../index.html">← Portfolio</a><a href="../index.html#blog">All Posts</a></div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="../js/main.js"></script>
+</body>
+</html>

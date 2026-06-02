@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Transistor কী? BJT এর কাজ সহজ ভাষায় | Ruhul Amin Blog" />
+  <title>Transistor কী? BJT এর কাজ সহজ ভাষায় | Ruhul Amin</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-hero{min-height:50vh;display:flex;align-items:center;background:var(--gradient-hero);padding:140px 0 80px;position:relative;overflow:hidden}
+    .post-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4}
+    .post-category-tag{display:inline-block;font-size:.75rem;font-weight:700;color:var(--accent);background:var(--tag-bg);padding:6px 16px;border-radius:100px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;border:1px solid rgba(0,102,255,.2);font-family:'JetBrains Mono',monospace}
+    .post-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:20px;max-width:800px}
+    .post-meta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;font-size:.88rem;color:var(--text-muted)}
+    .post-meta-row span{display:flex;align-items:center;gap:6px}
+    .post-author-avatar{width:44px;height:44px;border-radius:50%;background:var(--gradient-accent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:white;flex-shrink:0}
+    .post-layout{display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;padding:80px 0}
+    .post-content{font-size:1.05rem;line-height:1.9;color:var(--text-secondary)}
+    .post-content h2{font-size:1.6rem;margin:48px 0 16px;color:var(--text-primary)}
+    .post-content h3{font-size:1.25rem;margin:36px 0 12px;color:var(--text-primary)}
+    .post-content p{margin-bottom:20px}
+    .post-content ul,.post-content ol{padding-left:28px;margin-bottom:20px}
+    .post-content li{margin-bottom:8px}
+    .post-content blockquote{border-left:4px solid var(--accent);padding:16px 24px;background:var(--tag-bg);border-radius:0 12px 12px 0;margin:28px 0;font-style:italic;color:var(--text-primary)}
+    .post-content code{font-family:'JetBrains Mono',monospace;font-size:.88rem;background:var(--skill-bg);color:var(--accent);padding:2px 8px;border-radius:5px}
+    .post-content pre{background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:24px;overflow-x:auto;margin:28px 0}
+    .post-content pre code{background:none;padding:0;font-size:.9rem;color:var(--text-secondary)}
+    .post-image{width:100%;height:280px;background:var(--gradient-hero);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:6rem;margin:32px 0;border:1px solid var(--border)}
+    .post-tags{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0;padding:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px}
+    .post-tags h4{width:100%;font-size:.85rem;color:var(--text-muted);margin-bottom:8px;font-weight:600}
+    .post-share{margin:40px 0;padding:28px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;text-align:center}
+    .post-share h4{margin-bottom:16px}
+    .share-buttons{display:flex;gap:10px;justify-content:center}
+    .share-btn{padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:6px;text-decoration:none}
+    .share-fb{background:#1877f2;color:white}.share-tw{background:#000;color:white}.share-li{background:#0a66c2;color:white}
+    .share-btn:hover{transform:translateY(-2px);opacity:.9;color:white}
+    .post-sidebar{position:sticky;top:100px}
+    .sidebar-card{padding:28px;margin-bottom:24px}
+    .sidebar-card h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .toc-list{list-style:none}
+    .toc-list li{margin-bottom:8px}
+    .toc-list a{font-size:.88rem;color:var(--text-secondary);display:flex;align-items:center;gap:6px;transition:color .2s}
+    .toc-list a:hover{color:var(--accent)}
+    @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.post-sidebar{position:static}}
+  </style>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="container nav-container">
+    <a href="../index.html" class="nav-logo">RA<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#hero">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="navMobile" class="nav-mobile">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../index.html#blog">📝 Blog</a>
+    <a href="../index.html#contact">📬 Contact</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="post-category-tag">⚡ EEE</span>
+    <h1 class="post-title">Transistor কী? BJT এর কাজ সহজ ভাষায়</h1>
+    <div class="post-meta-row">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="post-author-avatar">👨‍💻</div>
+        <div><div style="font-weight:700;color:var(--text-primary);">Ruhul Amin</div><div style="font-size:.8rem;color:var(--text-muted);">EEE Student</div></div>
+      </div>
+      <span><i class="fa-regular fa-calendar"></i> ১৫ ডিসেম্বর, ২০২৪</span>
+      <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="post-layout">
+    <article class="post-content">
+      <div class="post-image" aria-hidden="true">⚡</div>
+      <p>Transistor আধুনিক electronics এর সবচেয়ে গুরুত্বপূর্ণ component। আপনার phone এ billions of transistors আছে! কিন্তু এই tiny device টি আসলে কী করে? আজকে BJT transistor এর কাজ সহজ বাংলায় বুঝব।</p>
+      <h2>Transistor এর তিনটি terminal</h2>
+      <p>BJT (Bipolar Junction Transistor) এর তিনটি terminal থাকে: Base (B), Collector (C), এবং Emitter (E)। Base হলো control input — এখানে ছোট signal দিলে Collector-Emitter এর মধ্যে বড় current flow করে। এটাই transistor এর amplification principle।</p>
+      <pre><code>// Transistor as a switch - LED control
+// Base এ signal দিলে LED জ্বলবে
+
+void setup() {
+  pinMode(9, OUTPUT);  // Base control pin
+}
+
+void loop() {
+  digitalWrite(9, HIGH);  // Transistor ON - LED জ্বলে
+  delay(1000);
+  digitalWrite(9, LOW);   // Transistor OFF - LED নেভে
+  delay(1000);
+}
+
+/* 
+   Real circuit:
+   Arduino pin 9 → 1kΩ → Base (B)
+   Collector (C) → LED → +5V  
+   Emitter (E) → GND
+*/</code></pre>
+      <h2>NPN vs PNP Transistor</h2>
+      <p>NPN transistor এ Base এ positive voltage দিলে current flow করে। PNP transistor এ উল্টো — Base এ low voltage দিলে current flow করে। বেশিরভাগ ক্ষেত্রে NPN ব্যবহার করা হয় কারণ এটা control করা সহজ।</p>
+      <blockquote>প্রতিটি নতুন জিনিস শেখার সময় ভয় লাগবেই — কিন্তু শেখার পর সেই আনন্দই হলো সবচেয়ে বড় পুরস্কার।</blockquote>
+      <div class="post-tags"><h4>Tags:</h4><span class="tag">#Transistor</span><span class="tag">#BJT</span><span class="tag">#EEE</span><span class="tag">#Electronics</span></div>
+      <div class="post-share">
+        <h4>এই পোস্টটি শেয়ার করুন</h4>
+        <div class="share-buttons">
+          <a href="#" class="share-btn share-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="share-btn share-tw"><i class="fab fa-x-twitter"></i> Twitter</a>
+          <a href="#" class="share-btn share-li"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+    </article>
+    <aside class="post-sidebar">
+      <div class="glass-card sidebar-card">
+        <h4>Related Posts</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="post1.html" style="font-size:.88rem;color:var(--text-secondary);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">⚡ Ohm Law to Smart Grid</a>
+          <a href="post2.html" style="font-size:.88rem;color:var(--text-secondary);text-decoration:none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">⚙️ Arduino Projects</a>
+          <a href="../index.html#blog" style="font-size:.88rem;color:var(--accent);text-decoration:none;">📝 সব পোস্ট দেখুন →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> <strong>Ruhul Amin</strong>. Made with ❤️ in Bangladesh 🇧🇩</p>
+      <div class="footer-links"><a href="../index.html">← Portfolio</a><a href="../index.html#blog">All Posts</a></div>
+    </div>
+  </div>
+</footer>
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<script src="../js/main.js"></script>
+</body>
+</html>

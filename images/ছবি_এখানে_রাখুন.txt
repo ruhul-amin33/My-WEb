@@ -1,0 +1,21 @@
+এই ফোল্ডারে আপনার ছবি রাখুন:
+
+1. profile.jpg  → হিরো সেকশনের প্রোফাইল ছবি (400x400px বা বড়, বর্গাকার)
+2. about.jpg    → About সেকশনের ছবি (4:5 ratio ভালো)
+
+ছবি রাখার পর index.html খুলুন এবং এই কমেন্ট লাইনগুলো সক্রিয় করুন:
+
+Hero section এ:
+<!-- <img src="images/profile.jpg" alt="Ruhul Amin" /> -->
+→ করুন:
+<img src="images/profile.jpg" alt="Ruhul Amin" />
+
+About section এ:
+<!-- <img src="images/about.jpg" alt="Ruhul Amin working" /> -->
+→ করুন:
+<img src="images/about.jpg" alt="Ruhul Amin working" />
+
+ছবির টিপস:
+- ছবি পরিষ্কার এবং professional হওয়া উচিত
+- ছবির size 500KB এর নিচে রাখুন (Squoosh.app দিয়ে compress করুন)
+- সাদা বা neutral background ভালো দেখায়

@@ -1124,7 +1124,10 @@
         <h3 class="form-title">📬 বার্তা পাঠান</h3>
         <p class="form-subtitle">সাধারণত ২৪ ঘন্টার মধ্যে reply করি</p>
 
-        <form id="contactForm" novalidate aria-label="Contact form">
+        <!-- ✅ Formspree Contact Form — YOUR_FORM_ID টা পরিবর্তন করুন -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-label="Contact form">
+          <input type="hidden" name="_subject" value="📬 নতুন Message — Ruhul এর Portfolio থেকে!" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="contactName">আপনার নাম *</label>
@@ -1158,15 +1161,53 @@
             <textarea id="contactMessage" name="message" placeholder="আপনার বার্তা এখানে লিখুন..." required minlength="10" aria-required="true"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary form-submit" aria-label="Send message">
+          <button type="submit" class="btn btn-primary form-submit" id="submitBtn" aria-label="Send message">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
             বার্তা পাঠান
           </button>
 
-          <div id="formSuccess" class="success-message" role="alert" aria-live="polite">
+          <div id="formSuccess" class="success-message" role="alert" aria-live="polite" style="display:none;">
             ✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে! শীঘ্রই reply করব।
           </div>
+          <div id="formError" role="alert" aria-live="polite" style="display:none; text-align:center; padding:16px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:12px; color:#f87171; font-weight:600; margin-top:16px;">
+            ❌ কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।
+          </div>
         </form>
+
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn    = document.getElementById('submitBtn');
+          const ok     = document.getElementById('formSuccess');
+          const err    = document.getElementById('formError');
+
+          btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> পাঠানো হচ্ছে...';
+          btn.disabled = true;
+          ok.style.display = 'none';
+          err.style.display = 'none';
+
+          try {
+            const res = await fetch(this.action, {
+              method: 'POST',
+              body: new FormData(this),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              ok.style.display = 'block';
+              this.reset();
+              btn.innerHTML = '<i class="fa-solid fa-check"></i> পাঠানো হয়েছে!';
+              setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
+                btn.disabled = false;
+              }, 4000);
+            } else { throw new Error(); }
+          } catch {
+            err.style.display = 'block';
+            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
+            btn.disabled = false;
+          }
+        });
+        </script>
       </div>
 
     </div>

@@ -1124,9 +1124,12 @@
         <h3 class="form-title">📬 বার্তা পাঠান</h3>
         <p class="form-subtitle">সাধারণত ২৪ ঘন্টার মধ্যে reply করি</p>
 
-        <!-- ✅ Formspree Contact Form — YOUR_FORM_ID টা পরিবর্তন করুন -->
-        <form id="contactForm" action="https://formspree.io/f/xeewanvl" method="POST" aria-label="Contact form">
-          <input type="hidden" name="_subject" value="📬 নতুন Message — Ruhul এর Portfolio থেকে!" />
+        <!-- ✅ Web3Forms -->
+        <form id="contactForm" aria-label="Contact form">
+          <input type="hidden" name="access_key" value="3dada063-84c5-4001-8811-05c3dc7d3a75" />
+          <input type="hidden" name="subject" value="📬 নতুন Message — Portfolio!" />
+          <input type="hidden" name="from_name" value="Ruhul Portfolio" />
+          <input type="checkbox" name="botcheck" style="display:none;" />
 
           <div class="form-row">
             <div class="form-group">
@@ -1161,48 +1164,43 @@
             <textarea id="contactMessage" name="message" placeholder="আপনার বার্তা এখানে লিখুন..." required minlength="10" aria-required="true"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary form-submit" id="submitBtn" aria-label="Send message">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            বার্তা পাঠান
+          <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+            <i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান
           </button>
-
-          <div id="formSuccess" class="success-message" role="alert" aria-live="polite" style="display:none;">
-            ✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে! শীঘ্রই reply করব।
+          <div id="formSuccess" style="display:none;text-align:center;padding:16px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;color:#34d399;font-weight:600;margin-top:16px;">
+            ✅ বার্তা পাঠানো হয়েছে! শীঘ্রই reply করব।
           </div>
-          <div id="formError" role="alert" aria-live="polite" style="display:none; text-align:center; padding:16px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:12px; color:#f87171; font-weight:600; margin-top:16px;">
-            ❌ কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।
+          <div id="formError" style="display:none;text-align:center;padding:16px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:12px;color:#f87171;font-weight:600;margin-top:16px;">
+            ❌ সমস্যা হয়েছে। আবার চেষ্টা করুন।
           </div>
         </form>
-
         <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
           e.preventDefault();
-          const btn    = document.getElementById('submitBtn');
-          const ok     = document.getElementById('formSuccess');
-          const err    = document.getElementById('formError');
-
+          const btn = document.getElementById('submitBtn');
+          const ok  = document.getElementById('formSuccess');
+          const err = document.getElementById('formError');
           btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> পাঠানো হচ্ছে...';
           btn.disabled = true;
           ok.style.display = 'none';
           err.style.display = 'none';
-
+          const data = Object.fromEntries(new FormData(this));
           try {
-            const res = await fetch(this.action, {
+            const res = await fetch('https://api.web3forms.com/submit', {
               method: 'POST',
-              body: new FormData(this),
-              headers: { 'Accept': 'application/json' }
+              headers: {'Content-Type':'application/json','Accept':'application/json'},
+              body: JSON.stringify(data)
             });
-            if (res.ok) {
+            const result = await res.json();
+            if (result.success) {
               ok.style.display = 'block';
               this.reset();
               btn.innerHTML = '<i class="fa-solid fa-check"></i> পাঠানো হয়েছে!';
-              setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
-                btn.disabled = false;
-              }, 4000);
-            } else { throw new Error(); }
-          } catch {
+              setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান'; btn.disabled = false; ok.style.display='none'; }, 5000);
+            } else { throw new Error(result.message); }
+          } catch(ex) {
             err.style.display = 'block';
+            err.innerHTML = '❌ ' + (ex.message || 'আবার চেষ্টা করুন');
             btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
             btn.disabled = false;
           }

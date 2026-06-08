@@ -1124,12 +1124,11 @@
         <h3 class="form-title">📬 বার্তা পাঠান</h3>
         <p class="form-subtitle">সাধারণত ২৪ ঘন্টার মধ্যে reply করি</p>
 
-        <!-- ✅ Web3Forms -->
-        <form id="contactForm" aria-label="Contact form">
-          <input type="hidden" name="access_key" value="3dada063-84c5-4001-8811-05c3dc7d3a75" />
-          <input type="hidden" name="subject" value="📬 নতুন Message — Portfolio!" />
-          <input type="hidden" name="from_name" value="Ruhul Portfolio" />
-          <input type="checkbox" name="botcheck" style="display:none;" />
+        <!-- ✅ Netlify Forms — সবচেয়ে সহজ! -->
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" aria-label="Contact form">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="subject" value="📬 নতুন Message — Ruhul এর Portfolio থেকে!" />
+          <p style="display:none;"><input name="bot-field" /></p>
 
           <div class="form-row">
             <div class="form-group">
@@ -1180,27 +1179,35 @@
           const btn = document.getElementById('submitBtn');
           const ok  = document.getElementById('formSuccess');
           const err = document.getElementById('formError');
+
           btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> পাঠানো হচ্ছে...';
           btn.disabled = true;
           ok.style.display = 'none';
           err.style.display = 'none';
-          const data = Object.fromEntries(new FormData(this));
+
+          const formData = new FormData(this);
+
           try {
-            const res = await fetch('https://api.web3forms.com/submit', {
+            const res = await fetch('/', {
               method: 'POST',
-              headers: {'Content-Type':'application/json','Accept':'application/json'},
-              body: JSON.stringify(data)
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(formData).toString()
             });
-            const result = await res.json();
-            if (result.success) {
+
+            if (res.ok) {
               ok.style.display = 'block';
               this.reset();
               btn.innerHTML = '<i class="fa-solid fa-check"></i> পাঠানো হয়েছে!';
-              setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান'; btn.disabled = false; ok.style.display='none'; }, 5000);
-            } else { throw new Error(result.message); }
+              setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
+                btn.disabled = false;
+                ok.style.display = 'none';
+              }, 5000);
+            } else {
+              throw new Error('Server error');
+            }
           } catch(ex) {
             err.style.display = 'block';
-            err.innerHTML = '❌ ' + (ex.message || 'আবার চেষ্টা করুন');
             btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> বার্তা পাঠান';
             btn.disabled = false;
           }
